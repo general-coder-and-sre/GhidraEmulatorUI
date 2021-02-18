@@ -228,7 +228,10 @@ class EmulatorUiProvider extends ComponentProviderAdapter {
 		
 		action = new DockingAction("Goto", getName()) {
 			public void actionPerformed(ActionContext context) {
-				BigInteger to = master.getProgramLocation().getAddress().getOffsetAsBigInteger();
+				//BigInteger to = master.getProgramLocation().getAddress().getOffsetAsBigInteger();
+				// Remove "CODE:" or "code:" for processors with segmented code and data areas
+				String toString = master.getProgramLocation().getAddress().toString().replace("CODE:","").replace("code:","");
+				long to = Long.parseLong(toString, 16);
 				emu.writeRegister(emu.getPCRegister(), to);
 				regtablemodel.fireTableDataChanged();
 				localtablemodel.recompute();
