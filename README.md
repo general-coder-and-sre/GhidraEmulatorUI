@@ -1,3 +1,9 @@
+# Note
+Load up in Eclipse (linked to Ghidra) and complile, as a plugin for your specific version of Ghidra.Then install as plugin, as per origional instructions bellow.
+
+# Thanks
+To Cslambert for the origional code.
+
 # Emulator UI for Ghidra
 
 Fairly jank right now, made for a project in CMU's 14-819 reverse engineering course.
